@@ -1,0 +1,308 @@
+/* filepath: public/style.css */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 0;
+    background-color: #4CAF50;
+    width: 100%;
+}
+
+#navigation {
+    background-color: #333;
+    overflow: hidden;
+}
+
+#navigation button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#navigation button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#content {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 100px); /* Adjust height based on header and navigation */
+}
+
+#sidebar-container {
+    width: 20%;
+    background-color: #e0f7fa; /* Sets the background color to very light blue */
+    padding: 10px; /* Adjust padding to make it tighter */
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure the buttons are at the bottom */
+}
+
+#sidebar-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#sidebar-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    width: 80px; /* Set a fixed width to ensure all buttons are the same size */
+}
+
+/* Remove the hover effect */
+#sidebar-buttons button:hover {
+    background-color: #4CAF50; /* Keep the background color the same as the default */
+}
+
+#sidebar-buttons button:focus {
+    outline: none; /* Remove the default outline */
+    box-shadow: none; /* Remove any box shadow */
+}
+
+#sidebar-buttons button.button-down {
+    background-color: #388E3C; /* Darker green for button down effect */
+    transform: translateY(2px); /* Move the button down slightly */
+}
+
+#layers-container {
+    z-index: 1000;
+    background: white; /* Sets the background color to white */
+    padding: 5px; /* Adjust padding to make it tighter */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    margin: 5px; /* Remove margin to fit tighter */
+}
+
+#map-container {
+    width: 80%;
+    height: 100%;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#basemap-selector {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: white;
+    padding: 3px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure the selector is above the map */
+    font-size: 14px;
+}
+
+#basemap-selector select {
+    font-size: 12px; /* Reduce font size */
+    height: 24px; /* Further reduce height */
+    padding: 2px; /* Further reduce padding */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.location-button-container {
+    position: absolute;
+    bottom: 70px; /* Adjust to position above zoom buttons */
+    left: 20px; /* 20px from the left */
+    z-index: 1000; /* Ensure the button is above the map */
+}
+
+.location-button, .custom-zoom-button {
+    background: white;
+    border: none;
+    padding: 0px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 24px;
+    width: 30px; /* Match the size of buttons */
+    height: 30px; /* Match the size of buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px; /* 5px between buttons */
+}
+
+.location-button:hover, .custom-zoom-button:hover {
+    background-color: #ddd;
+}
+
+.location-button img, .custom-zoom-button img {
+    width: 24px; /* Adjust the size of the icon */
+    height: 24px; /* Adjust the size of the icon */
+    display: block;
+}
+
+.custom-zoom-button button {
+    width: 100%; /* Ensure the button fills the container */
+    height: 100%; /* Ensure the button fills the container */
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    font-size: 18px; /* Adjust font size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#address-search {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: white;
+    padding: 2px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+#address-search input {
+    width: 250px; /* Adjust width as needed */
+    height: 26px; /* Further reduce height */
+    padding: 2px; /* Further reduce padding */
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 12px; /* Reduce font size */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#address-search button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    height: 26px; /* Further reduce height */
+    padding: 2px 2px; /* Further reduce padding */
+    margin-left: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px; /* Reduce font size */
+}
+
+#address-search button:hover {
+    background: #45a049;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+.popup-content {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.popup-content b {
+    font-weight: bold;
+    font-size: 16px;
+    color: #0c0fe2;
+}
+
+.popup-content .popup-key {
+    font-weight: bold;
+    color: #333;
+}
+
+.popup-content .popup-value {
+    color: #555;
+}
+
+.legend-symbol {
+    margin-top: 10px; /* Adjust the top margin as needed */
+    margin-bottom: 10px; /* Adjust the bottom margin as needed */
+    margin-left: 50px; /* Adjust the left margin as needed */
+}
+
+#calgary-city-limits-legend .legend-symbol {
+    width: 26px;
+    height: 20px;
+}
+
+#hospitals-of-alberta-legend .legend-symbol {    
+    width: 30px; /* Adjust the size of the icon */    
+    height: 30px; /* Adjust the size of the icon */}
+
