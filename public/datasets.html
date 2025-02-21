@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Catalog - GIS Web Project</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        .catalog-container {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+        }
+        
+        .catalog-title {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .catalog-image {
+            max-width: 90%;
+            height: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Match the content layout from the home page */
+        #content {
+            position: relative;
+            padding: 20px;
+            height: calc(100vh - 100px);
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        Hooray !!! This is my first GIS web.
+    </div>
+    <div id="navigation">
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='datasets.html'" class="active">Datasets</button>
+        <button onclick="location.href='contactus.html'">Contact Us</button>
+    </div>
+    <div id="content">
+        <div class="catalog-container">
+            <h1 class="catalog-title">Google Earth Engine DATA CATALOG</h1>
+            <img src="images/gee-data-catalog.png" alt="GEE Data Catalog" class="catalog-image">
+        </div>
+    </div>
+</body>
+</html>
