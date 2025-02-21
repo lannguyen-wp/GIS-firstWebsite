@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First GIS Web Project</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.pattern/leaflet.pattern.css" />
+    <link rel="icon" href="images/map-icon.ico" type="image/x-icon">
+    <script>
+        function initMap() {
+            console.log('Map initialized');
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM6ocwHhLxcIidXKUmOWNtuA_ghCjVyU0&libraries=places&callback=initMap">
+    </script>
+</head>
+<body>
+    <div id="header">
+        Hooray !!! This is my first GIS web.
+    </div>
+    <div id="navigation">
+        <button onclick="location.href='index.html'" class="active">Home</button>
+        <button onclick="location.href='datasets.html'">Datasets</button>
+        <button onclick="location.href='contactus.html'">Contact Us</button>
+    </div>
+    <div id="content">
+        <div id="sidebar-container">
+            <div id="sidebar-layers-container">
+                <h3>Data Layers</h3>
+                <div id="layers">
+                    <div>
+                        <input type="checkbox" id="calgary-city-limits" checked>
+                        <label for="calgary-city-limits">Calgary City Limits</label>
+                        <div id="sidebar-legend-cityLimits" class="sidebar-legend-item">
+                            <div class="sidebar-legend-symbol"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="hospitals-of-alberta" checked>
+                        <label for="hospitals-of-alberta">Hospitals of Alberta</label>
+                        <div id="sidebar-legend-hospitals" class="sidebar-legend-item">
+                            <img src="images/hospital-64.png" alt="Hospital Legend" class="sidebar-legend-symbol">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sidebar-table-container">
+                <table id="sidebar-table">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">Select a hospital to see details</td>
+                        </tr>                        
+                        <!-- Table rows will be added dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="sidebar-buttons-container">
+                <button id="add-button">Add</button>
+                <button id="remove-button">Remove</button>
+                <button id="edit-button">Edit</button>
+            </div>
+        </div>
+        <div id="map-container">
+            <div id="map"></div>
+            <div id="basemap-selector">
+                <select id="basemap">
+                    <option value="Google Satellite">Google Satellite</option>
+                    <option value="Google Hybrid">Google Hybrid</option>
+                    <option value="Google Streets">Google Streets</option>
+                    <option value="Open Street Map">Open Street Map</option>
+                    <option value="Esri Satellite">Esri Satellite</option>
+                    <option value="Esri Streets">Esri Streets</option>
+                    <option value="Esri Topographic">Esri Topographic</option>
+                </select>
+            </div>
+            <div id="map-button-container">
+                <button id="my-location" class="map-button" title="My Location">
+                    <img src="images/map-pin-64.png" alt="Location">
+                </button>
+                <button id="zoom-in" class="map-button" title="Zoom-In">+</button>
+                <button id="zoom-out" class="map-button" title="Zoom-Out">-</button>
+            </div>
+            <!-- Add the OSM Nominatim geocoder search box -->
+            <div id="address-search">
+                <input type="text" id="address-search-input" placeholder="Search for places or addresses">
+                <button id="address-search-button">Search</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@latest/dist/Leaflet.GoogleMutant.js"></script> 
+    <script src="https://unpkg.com/leaflet.pattern/leaflet.pattern.js"></script>
+    <script src="https://unpkg.com/leaflet-ajax/dist/leaflet.ajax.min.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@2.5.3/dist/esri-leaflet.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/initiation.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,147 @@
+#map-container {
+    width: 80%;
+    height: 100%;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#basemap-selector {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: white;
+    padding: 3px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure the selector is above the map */
+    font-size: 14px;
+}
+
+#basemap-selector select {
+    font-size: 12px; /* Reduce font size */
+    height: 24px; /* Further reduce height */
+    padding: 2px; /* Further reduce padding */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#map-button-container {
+    position: absolute;
+    bottom: 40px; /* Adjust to position above zoom buttons */
+    left: 20px; /* 20px from the left */
+    z-index: 1000; /* Ensure the button is above the map */
+    display: flex;
+    flex-direction: column;
+}
+
+.map-button {
+    background: white;
+    border: none;
+    padding: 0px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 24px;
+    width: 30px; /* Match the size of buttons */
+    height: 30px; /* Match the size of buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px; /* 5px between buttons */
+}
+
+.map-button:hover {
+    background-color: #ddd;
+}
+
+.map-button img {
+    width: 24px; /* Adjust the size of the icon */
+    height: 24px; /* Adjust the size of the icon */
+    display: block;
+}
+
+.map-button button {
+    width: 100%; /* Ensure the button fills the container */
+    height: 100%; /* Ensure the button fills the container */
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    font-size: 18px; /* Adjust font size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#address-search {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: white;
+    padding: 2px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+#address-search input {
+    width: 250px; /* Adjust width as needed */
+    height: 26px; /* Further reduce height */
+    padding: 2px; /* Further reduce padding */
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    font-size: 12px; /* Reduce font size */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#address-search button {
+    background: green;
+    color: white;
+    border: none;
+    height: 26px; /* Further reduce height */
+    padding: 2px 2px; /* Further reduce padding */
+    margin-left: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px; /* Reduce font size */
+}
+
+#address-search button:hover {
+    background: darkgreen;
+}
+
+.leaflet-popup-content {
+    margin: 5px !important;  /* Will work */
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+.popup-content {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.popup-content b {
+    font-weight: bold;
+    font-size: 16px;
+    color: blue;
+}
+
+.popup-content .popup-key {
+    font-weight: bold;
+    color: black;
+}
+
+.popup-content .popup-value {
+    color: black;
+}
